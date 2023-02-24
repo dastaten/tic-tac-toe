@@ -1,6 +1,7 @@
 function openPlayerConfig(event) {
   editedPlayer = +event.target.dataset.playerid;
   playerConfigOverlayElement.style.display = 'block';
+  playerNameInputElement.focus();
   backdropElement.style.display = 'block';
 }
 
@@ -9,7 +10,7 @@ function closePlayerConfig() {
   backdropElement.style.display = 'none';
   formElement.firstElementChild.classList.remove('error');
   errorOutputElement.textContent = '';
-  document.getElementById('playername').value = '';
+  playerNameInputElement.value = '';
 }
 
 function savePlayerConfig(event) {
